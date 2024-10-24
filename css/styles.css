@@ -2,13 +2,11 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
-    overflow-x: hidden;
-    background-color: #ffffff;
 }
 
 /* Nav styles */
 nav {
-    background-color: #00000000;
+    background-color: rgba(133, 133, 133, 0);
     height: 70px;
     display: flex;
     align-items: center;
@@ -17,7 +15,7 @@ nav {
     position: fixed; /* Fija la barra de navegación en la parte superior */
     top: 0;
     width: 100%;
-    z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+    z-index: 1500; /* Asegura que la barra de navegación esté por encima de otros elementos */
 }
 
 .logo-header{
@@ -116,6 +114,18 @@ nav {
     padding-bottom: 5px; /* Espacio para que se vea la línea */
 }
 
+@media (max-width: 768px) {
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .texto h1 { 
+        font-size: 50px;
+        margin-top: 30vh;
+    }
+}
+
 .logo-header img {
     margin-left: 20px;
     height: 50px;
@@ -167,44 +177,73 @@ html {
     object-fit: cover;    /* Asegura que la imagen cubra el contenedor sin distorsión */
 }
 
-/* Estilo para el texto */
+/* Estilo para el contenedor del texto */
 .texto {
-    color: #ffffff;/
-    z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    color: #ffffff;
+    z-index: 2; /* Asegura que el texto esté por encima de la imagen */
     position: absolute;
+    top: 45%; /* Ajusta la posición vertical */
+    left: 20%; /* Centra horizontalmente */
+    transform: translate(-50%, -30%); /* Centra completamente el texto */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    width: 80%; /* Ajusta el ancho del contenedor para permitir el centrado */
 }
 
+/* Estilo para el título principal */
 .texto h1 {
-    margin-top: 38vh;
-    width: 590px;
-    right: 103.5vh;
-    position: absolute;
-    font-size: 105px; /* Ajusta el tamaño según tus necesidades */
+    font-size: 6vw; /* Tamaño de fuente relativo al ancho de la ventana */
+    font-weight: bold;
 }
 
-.texto .subtitulo h2{
-    margin-top: 55vh;
-    width: 500px;
-    right: 115vh;
-    position: absolute;
-    font-size: 51px; /* Ajusta el tamaño según tus necesidades */
+/* Estilo para el subtítulo */
+.texto .subtitulo h2 {
+    font-size: 3vw; /* Tamaño de fuente relativo al ancho de la ventana */
+    font-weight: 300;
+    margin-top: -10vh; /* Espacio entre el título y el subtítulo */
 }
 
-.carousel{
-    position: absolute;
-    top: 15vh;
-    right: 10vh;
-    overflow: hidden;
+/* Media queries para ajustar tamaños en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .texto h1 {
+        font-size: 8vw; /* Ajusta el tamaño para pantallas móviles */
+    }
+
+    .texto .subtitulo h2 {
+        font-size: 5vw;
+    }
 }
 
+@media (max-width: 480px) {
+    .texto h1 {
+        font-size: 10vw;
+        margin-top: 10vh; /* Ajusta el espacio superior para móviles */
+    }
 
-.carousel img{
-    background-color: ;
-    margin-top: 0;
-    width: 100vh;
-    transition: transform 0.5 ease;
+    .texto .subtitulo h2 {
+        font-size: 6.5vw;
+    }
 }
 
-.carousel:hover img{
-    transform: scale(1.1);
+.carousel {
+    left: 100vh;
+    top: 20vh;
+    position: absolute; /* Cambiado a relative para que las imágenes se superpongan */
+    width: 750px; /* Ajusta según tus necesidades */
+    height: 600px; /* Se ajusta automáticamente a la altura de las imágenes */
+    overflow: hidden; /* Oculta las imágenes fuera de la caja */
+    margin: auto;
+}
+
+.carousel img {
+    width: 100%; /* Asegúrate de que las imágenes ocupen todo el ancho */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    position: absolute; /* Superpone las imágenes */
+    top: 0; /* Alinea en la parte superior */
+    left: 0; /* Alinea a la izquierda */
+    opacity: 0; /* Comienza oculto */
+    transition: opacity 1s ease-in-out; /* Transición suave para el cambio de opacidad */
+}
+
+.carousel img.active {
+    opacity: 1; /* Solo la imagen activa es visible */
 }
