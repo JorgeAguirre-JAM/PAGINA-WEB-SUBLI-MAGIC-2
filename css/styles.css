@@ -2,7 +2,6 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
-    padding: 0;
     overflow-x: hidden;
     background-color: #ffffff;
 }
@@ -21,9 +20,14 @@ nav {
     z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
 }
 
+.logo-header{
+    margin-left: 15px;
+}
+
 .logo-header img{
     width: 200px;
     height: auto;
+    
 }
 
 .nav-menu {
@@ -32,7 +36,7 @@ nav {
     justify-content: right;
     margin-right: 90px;
     align-items: center;
-    margin: 0;
+    margin: 20px;
     padding: 0;
 }
 
@@ -150,13 +154,11 @@ html {
 
 /* Estilo para la primera sección */
 .primer-elemento .fondo {
-    position: relative; /* Para permitir posicionamiento absoluto del texto */
+    position: static;
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh; /* Ajusta la altura según sea necesario */
     width: 100%;
-    overflow: hidden; /* Asegúrate de que nada sobresalga */
 }
 
 .primer-elemento .fondo img {
@@ -167,21 +169,42 @@ html {
 
 /* Estilo para el texto */
 .texto {
-    position: absolute; /* Permite que el texto se superponga a la imagen */
-    color: #ffffff;
-    text-align: center; /* Centra el texto horizontalmente */
+    color: #ffffff;/
     z-index: 10; /* Asegura que el texto esté por encima de la imagen */
+    position: absolute;
 }
 
 .texto h1 {
-    font-size: 80px; /* Ajusta el tamaño según tus necesidades */
+    margin-top: 38vh;
+    width: 590px;
+    right: 103.5vh;
+    position: absolute;
+    font-size: 105px; /* Ajusta el tamaño según tus necesidades */
 }
 
-.texto p {
-    font-size: 24px; /* Ajusta el tamaño según tus necesidades */
+.texto .subtitulo h2{
+    margin-top: 55vh;
+    width: 500px;
+    right: 115vh;
+    position: absolute;
+    font-size: 51px; /* Ajusta el tamaño según tus necesidades */
 }
 
-/* Estilo para el resto del contenido */
-.contenido {
-    padding: 20px; /* Espacio alrededor del contenido */
+.carousel{
+    position: absolute;
+    top: 15vh;
+    right: 10vh;
+    overflow: hidden;
+}
+
+
+.carousel img{
+    background-color: ;
+    margin-top: 0;
+    width: 100vh;
+    transition: transform 0.5 ease;
+}
+
+.carousel:hover img{
+    transform: scale(1.1);
 }
