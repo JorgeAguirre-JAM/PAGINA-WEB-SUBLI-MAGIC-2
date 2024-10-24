@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subli-Magic - control</title>
+    <link rel="icon" href="imagenes/OMEGA SUBLI.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/control.css">
+    <script src="js/selector.js" defer></script> 
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-header">
+                <a href="index.html"><img src="imagenes/HERRADURA SUBLI.png" alt="Subli-Magic"></a>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="productos.html">Productos</a>
+                        <div class="dropdown-content">
+                            <a href="ropapersonalizada.html">Ropa Personalizada</a>
+                            <a href="accesorios.html">Accesorios Personalizados</a>
+                            <a href="publicidadvasos.html">Publicidad / Vasos</a>
+                            <a href="impresiones.html">Impresiones y Papelería</a>
+                            <a href="dtf.html">DTF</a>
+                            <a href="corteygrabado.html">Corte y Grabado Láser</a>
+                            <a href="vinil.html">Vinil</a>
+                            <a href="empresarial.html">Empresarial</a>
+                        </div>
+                    </li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="personalizar.html">Personalizar</a></li>
+                    <li class="carrito">
+                        <a href="carrito.html"><img src="imagenes/CARRITO.png" alt="Carrito"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--Zona para imagen-->
+    <div class="centrar">
+        <div class="imagen">
+            <img class="subirimg"  src="imagenes/subir imagen.png" alt="no encontrado">
+            <p class="pi">Subir imagen</p>
+        </div>
+    </div>
+    <!--precio y producto-->
+    <div class="centrar2">
+        <div class="elem-group">
+            <label for="seleccion">Tipo de producto</label>
+            <select id="seleccion-producto" name="seleccion-producto" required>
+                <option selected>Selecciona el tipo de producto</option>
+            </select>
+            <select id="seleccion-productob" name="seleccion-productob" required>
+                <option selected>Selecciona el tipo de producto</option>
+            </select>  
+          
+        </div>
+    <div class="elem-group">
+        <label for="nombre">Precio</label>
+        <input type="number" id="precio" name="precio" placeholder="Precio del producto" pattern="[0-9]{1,20}" required>
+    </div>
+    <div class="elem-group">
+        <label for="message">Descripción</label>
+        <textarea type="message" id="message" name="message" placeholder="Agrega la descripción del producto" required></textarea>
+    </div>
+    <button type="submit">Subir</button>
+    </div>
+</body>
+</html>
